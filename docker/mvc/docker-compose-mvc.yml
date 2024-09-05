@@ -1,0 +1,22 @@
+﻿version: '3.7'
+
+services:
+      
+  threetenant.web.mvc:
+    image: ${DOCKER_REGISTRY-}threetenantwebmvc
+    container_name: threetenantwebmvc_container
+    build:
+      context: ../../
+      dockerfile: src/ThreeTenant.Web.Mvc/Dockerfile
+    environment:
+      - ConnectionStrings__Default=Server=mssqlDb;Database=ThreeTenantDb;User=sa;Password=Super_Encrypted_Passw0rd!
+      - Abp__RedisCache__ConnectionString=localhost:6379
+    ports:
+      - "44302:443"
+    networks:
+      - threetenant
+
+networks:
+  threetenant:
+    external:
+      name: threetenant

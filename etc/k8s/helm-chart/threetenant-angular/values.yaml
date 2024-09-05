@@ -1,0 +1,14 @@
+﻿global:
+  wwwHostDomain: threetenant-host-www
+  wwwHostUrl: "https://threetenant-host-www"
+  wwwAngularDomain: threetenant-angular-www
+  wwwAngularUrl: "https://threetenant-angular-www"
+  nginxProxyBufferSize: "32k"
+  nginxProxyBuffersNumber: "8"
+  defaultConnString: "Server=anz-sql,1433;Database=ThreeTenantDb;User ID=sa;Password=123qweX."
+www-host:
+  containerImage: "threetenant-host"
+www-angular:
+  containerImage: "threetenant-angular"  
+dbmigrator:
+  containerImage: "threetenant-migrator"

@@ -1,0 +1,7 @@
+﻿namespace ThreeTenant.Install.Dto
+{
+    public class CheckDatabaseOutput
+    {
+        public bool IsDatabaseExist { get; set; }
+    }
+}
